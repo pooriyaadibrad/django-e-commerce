@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
+    'shops.apps.ShopsConfig',
     'rest_framework',
 ]
 
@@ -77,11 +79,14 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE'),
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
+        'USER': os.environ.get('USER_DB'),
         'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': os.environ.get('HOST'),
         'PORT': os.environ.get('PORT'),
